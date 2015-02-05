@@ -34,6 +34,13 @@ var ath = addToHomescreen({
     maxDisplayCount: 0      // do not obey the max display count
 });
 // ath.clearSession();      // reset the user session
+
+var _ua = window.navigator.userAgent;
+var isMobileChrome = _ua.indexOf('Android') > -1 && (/Chrome\/[.0-9]*/).test(_ua);
+var isStandalone = window.navigator.standalone || ( isMobileChrome && ( screen.height - document.documentElement.clientHeight < 40 ) );
+var results = "alone: " + isStandalone + " st: " + window.navigator.standalone + " chrome: " + isMobileChrome + " sc: " + screen.height + " cl: " + document.documentElement.clientHeight;
+alert(results);
+
 </script>
 </body>
 </html>
