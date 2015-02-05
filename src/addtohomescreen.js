@@ -157,7 +157,7 @@ ath.OSVersion = _ua.match(/(OS|Android) (\d+[_\.]\d+)/);
 ath.OSVersion = ath.OSVersion && ath.OSVersion[2] ? +ath.OSVersion[2].replace('_', '.') : 0;
 
 ath.isStandalone = window.navigator.standalone || ( ath.isMobileChrome && ( screen.height - document.documentElement.clientHeight < 40 ) );	// TODO: check the lame polyfill
-var results = "library: alone: " + ath.isStandalone + " st: " + window.navigator.standalone + " chrome: " + ath.isMobileChrome + " sc: " + screen.height + " cl: " + document.documentElement.clientHeight;
+var results = "library: alone: " + ath.isStandalone + " st: " + window.navigator.standalone + " chrome: " + ath.isMobileChrome + " sc: " + screen.height + " cl: " + document.documentElement.clientHeight + " bh: " + document.body.clientHeight + " wi: " + window.innerHeight ;
 alert(results);
 ath.isTablet = (ath.isMobileSafari && _ua.indexOf('iPad') > -1) || (ath.isMobileChrome && _ua.indexOf('Mobile') < 0);
 
